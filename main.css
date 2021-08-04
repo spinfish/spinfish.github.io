@@ -1,25 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
-
 .app {
   --background-primary: rgb(35, 4, 49);
   --background-secondary: rgb(28, 0, 40);
   --background-tertiary: rgb(13, 0, 23);
   --base-border-radius: 10px;
-
-  color: rgb(58, 195, 184);
+  --text-normal: rgb(220, 221, 222);
+  --text-small: rgb(114, 118, 125);
+  color: var(--text-normal);
   font-family: "Inter", sans-serif;
   background: var(--background-tertiary);
 }
 
 .main {
   background: var(--background-secondary);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  padding: 40px;
+  padding: 30px;
   margin: 50px auto;
   border-radius: calc(var(--base-border-radius) * 2);
 }
 
-.info {
+.intro {
   padding: 10px 20px;
   border-radius: var(--base-border-radius);
   background: var(--background-primary);
@@ -27,42 +29,71 @@
 }
 
 .socials {
-  border-radius: var(--base-border-radius);
   background: var(--background-primary);
+  padding: 10px;
+  border-radius: var(--base-border-radius);
+}
+.socials__list {
+  list-style: none;
+  padding-left: unset;
+  margin: unset;
 }
 
-.socials__inner {
-  padding: 20px;
-  margin: auto;
-  width: fit-content;
+.favourites {
+  padding: 10px 20px;
+  border-radius: var(--base-border-radius);
+  background: var(--background-primary);
+  margin-top: 10px;
+}
+.favourites__list {
+  padding-left: unset;
+}
+.favourites__item {
+  background: -webkit-gradient(linear, left top, right top, from(#a764ed), to(#e292aa));
+  background: linear-gradient(to right, #a764ed, #e292aa);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.favourites__most-favourite {
+  margin: unset;
+  margin-bottom: 10px;
+  color: var(--text-small);
 }
 
 .social {
-  width: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 20px;
-  border: none;
-  border-radius: 4px;
-  font-family: inherit;
-  color: white;
+  border-radius: calc(var(--base-border-radius) - 2px);
   text-decoration: none;
-  padding: 5px;
+  padding: 5px 12px;
+  margin: auto;
+  margin-bottom: 4px;
 }
-
-/* .social-logo {
-  width: 30px;
-  height: 30px;
-  background: red;
+.social__link {
+  text-decoration: none;
+  color: var(--social-text-link);
 }
- */
-
+.social--github {
+  --social-text-link: rgb(88, 166, 255);
+  background: #040f21;
+}
 .social--spotify {
-  background: rgb(28, 208, 93);
+  --social-text-link: black;
+  background: #1cd05d;
 }
-
 .social--discord {
-  background: rgb(110, 133, 211);
+  --social-text-link: white;
+  background: #6e85d3;
 }
 
-/* .social--reddit {
-  background: rgb(247, 67, 0);
-} */
+.footer {
+  padding: 10px 20px;
+  border-radius: var(--base-border-radius);
+  background: var(--background-primary);
+  margin: unset;
+  margin-top: 10px;
+  color: var(--text-small);
+}

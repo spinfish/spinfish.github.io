@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+@mixin smaller-container {
+  padding: 10px 20px;
+  border-radius: var(--base-border-radius);
+  background: var(--background-primary);
+}
+
+.app {
+  --background-primary: rgb(35, 4, 49);
+  --background-secondary: rgb(28, 0, 40);
+  --background-tertiary: rgb(13, 0, 23);
+  --base-border-radius: 10px;
+  --text-normal: rgb(220, 221, 222);
+  --text-small: rgb(114, 118, 125);
+
+  color: var(--text-normal);
+  font-family: "Inter", sans-serif;
+  background: var(--background-tertiary);
+}
+
+.main {
+  background: var(--background-secondary);
+  width: fit-content;
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: calc(var(--base-border-radius) * 2);
+}
+
+.intro {
+  @include smaller-container;
+  margin-bottom: 10px;
+}
+
+.socials {
+  background: var(--background-primary);
+  padding: 10px;
+  border-radius: var(--base-border-radius);
+
+  &__list {
+    list-style: none;
+    padding-left: unset;
+    margin: unset;
+  }
+}
+
+.favourites {
+  @include smaller-container;
+  margin-top: 10px;
+
+  &__list {
+    padding-left: unset;
+  }
+
+  &__item {
+    background: linear-gradient(to right, rgb(167, 100, 237), rgb(226, 146, 170));
+    color: transparent;
+    background-clip: text; // Thanks autoprefixer
+  }
+
+  &__most-favourite {
+    margin: unset;
+    margin-bottom: 10px;
+    color: var(--text-small);
+  }
+}
+
+.social {
+  width: fit-content;
+  height: 20px;
+  border-radius: calc(var(--base-border-radius) - 2px);
+  text-decoration: none;
+  padding: 5px 12px;
+  margin: auto;
+  margin-bottom: 4px;
+
+  &__link {
+    text-decoration: none;
+    color: var(--social-text-link);
+  }
+
+  &--github {
+    --social-text-link: rgb(88, 166, 255);
+    background: rgb(4, 15, 33);
+  }
+
+  &--spotify {
+    --social-text-link: black;
+    background: rgb(28, 208, 93);
+  }
+
+  &--discord {
+    --social-text-link: white;
+    background: rgb(110, 133, 211);
+  }
+}
+
+.footer {
+  @include smaller-container;
+  margin: unset;
+  margin-top: 10px;
+  color: var(--text-small);
+}
