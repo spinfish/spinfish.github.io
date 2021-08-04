@@ -1,5 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
-.header {
+.app {
+  --background-primary: rgb(35, 4, 49);
+  --background-secondary: rgb(28, 0, 40);
+  --background-tertiary: rgb(13, 0, 23);
+  --base-border-radius: 10px;
+
+  color: rgb(58, 195, 184);
   font-family: "Inter", sans-serif;
+  background: var(--background-tertiary);
 }
+
+.main {
+  background: var(--background-secondary);
+  width: fit-content;
+  padding: 40px;
+  margin: 50px auto;
+  border-radius: calc(var(--base-border-radius) * 2);
+}
+
+.info {
+  padding: 10px 20px;
+  border-radius: var(--base-border-radius);
+  background: var(--background-primary);
+  margin-bottom: 10px;
+}
+
+.socials {
+  border-radius: var(--base-border-radius);
+  background: var(--background-primary);
+}
+
+.socials__inner {
+  padding: 20px;
+  margin: auto;
+  width: fit-content;
+}
+
+.social {
+  width: auto;
+  height: 20px;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+
+/* .social-logo {
+  width: 30px;
+  height: 30px;
+  background: red;
+}
+ */
+
+.social--spotify {
+  background: rgb(28, 208, 93);
+}
+
+.social--discord {
+  background: rgb(110, 133, 211);
+}
+
+/* .social--reddit {
+  background: rgb(247, 67, 0);
+} */
