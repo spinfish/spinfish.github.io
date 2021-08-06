@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
-@mixin smaller-container {
-  padding: 10px 20px;
-  border-radius: var(--base-border-radius);
+@mixin inner-container($half-top-padding: false) {
+  @if $half-top-padding {
+    padding: calc(var(--base-padding) / 2) var(--base-padding);
+  } @else {
+    padding: var(--base-padding);
+  }
+
   background: var(--background-primary);
+  border-radius: var(--base-border-radius);
+  margin-bottom: var(--base-margin);
 }
 
 .app {
@@ -11,6 +17,8 @@
   --background-secondary: rgb(28, 0, 40);
   --background-tertiary: rgb(13, 0, 23);
   --base-border-radius: 10px;
+  --base-padding: 20px;
+  --base-margin: 10px;
   --text-normal: rgb(220, 221, 222);
   --text-small: rgb(114, 118, 125);
 
@@ -22,31 +30,17 @@
 .main {
   background: var(--background-secondary);
   width: fit-content;
-  padding: 30px;
-  margin: 50px auto;
+  padding: var(--base-padding);
+  margin: var(--base-margin) auto;
   border-radius: calc(var(--base-border-radius) * 2);
 }
 
 .intro {
-  @include smaller-container;
-  margin-bottom: 10px;
-}
-
-.socials {
-  background: var(--background-primary);
-  padding: 10px;
-  border-radius: var(--base-border-radius);
-
-  &__list {
-    list-style: none;
-    padding-left: unset;
-    margin: unset;
-  }
+  @include inner-container($half-top-padding: true);
 }
 
 .favourites {
-  @include smaller-container;
-  margin-top: 10px;
+  @include inner-container($half-top-padding: true);
 
   &__list {
     padding-left: unset;
@@ -60,19 +54,30 @@
 
   &__most-favourite {
     margin: unset;
-    margin-bottom: 10px;
+    margin-bottom: var(--base-margin);
     color: var(--text-small);
   }
 }
 
 .social {
+  display: inline;
   width: fit-content;
   height: 20px;
   border-radius: calc(var(--base-border-radius) - 2px);
   text-decoration: none;
   padding: 5px 12px;
-  margin: auto;
-  margin-bottom: 4px;
+  margin: calc(var(--base-margin) / 3.25);
+
+  &s { // .socials
+    @include inner-container;
+
+    &__list { // .socials__list
+      list-style: none;
+      padding-left: unset;
+      margin: unset;
+      text-align: center;
+    }
+  }
 
   &__link {
     text-decoration: none;
@@ -96,8 +101,7 @@
 }
 
 .footer {
-  @include smaller-container;
+  @include inner-container($half-top-padding: true);
   margin: unset;
-  margin-top: 10px;
   color: var(--text-small);
 }
