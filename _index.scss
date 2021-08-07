@@ -50,8 +50,38 @@
 }
 
 .intro {
-
   @include inner-container($half-top-padding: true);
+}
+
+.socials {
+  float: right;
+  padding: 0 calc(var(--base-padding) / 3);
+  background: var(--preview-background);
+  border-radius: calc(var(--base-border-radius) / 2);
+}
+
+.social {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+
+  &--github {
+    background-image: url("assets/github_logo.png");
+  }
+
+  &--spotify {
+    background-image: url("assets/spotify_logo.png");
+  }
+
+  &--discord {
+    background-image: url("assets/discord_logo.png");
+  }
+}
+
+.direct-contact {
+  color: var(--text-small);
 }
 
 .projects {
@@ -89,47 +119,6 @@
   &__most-favourite {
     margin-bottom: var(--base-margin);
     color: var(--text-small);
-  }
-}
-
-.socials {
-  @include inner-container;
-
-  &__list {
-    list-style: none;
-    padding-left: unset;
-    margin: unset;
-    text-align: center;
-  }
-}
-
-.social {
-  display: inline;
-  width: fit-content;
-  height: 20px;
-  border-radius: calc(var(--base-border-radius) - 2px);
-  text-decoration: none;
-  padding: 5px 12px;
-  margin: calc(var(--base-margin) / 3.25);
-
-  &__link {
-    text-decoration: none;
-    color: var(--social-text-link);
-  }
-
-  &--github {
-    --social-text-link: rgb(88, 166, 255);
-    background: rgb(4, 15, 33);
-  }
-
-  &--spotify {
-    --social-text-link: black;
-    background: rgb(28, 208, 93);
-  }
-
-  &--discord {
-    --social-text-link: white;
-    background: rgb(110, 133, 211);
   }
 }
 
