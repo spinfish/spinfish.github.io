@@ -3,14 +3,25 @@
   --background-primary: rgb(35, 4, 49);
   --background-secondary: rgb(28, 0, 40);
   --background-tertiary: rgb(13, 0, 23);
+  --preview-background: rgb(45, 15, 61);
   --base-border-radius: 10px;
   --base-padding: 20px;
   --base-margin: 10px;
   --text-normal: rgb(220, 221, 222);
   --text-small: rgb(114, 118, 125);
+  --text-link: rgb(58, 195, 184);
+  --text-link-active: rgb(5, 207, 255);
   color: var(--text-normal);
   font-family: "Inter", sans-serif;
   background: var(--background-tertiary);
+}
+
+.link {
+  color: var(--text-link);
+  text-decoration: none;
+}
+.link:active {
+  color: var(--text-link-active);
 }
 
 .main {
@@ -30,26 +41,56 @@
   margin-bottom: var(--base-margin);
 }
 
+.projects {
+  padding: calc(var(--base-padding) / 2) var(--base-padding);
+  background: var(--background-primary);
+  border-radius: var(--base-border-radius);
+  margin-bottom: var(--base-margin);
+}
+.projects__list {
+  list-style: none;
+  padding-left: unset;
+}
+
+.project {
+  background: var(--preview-background);
+  border-radius: var(--base-border-radius);
+  margin-bottom: var(--base-margin);
+  padding: var(--base-padding);
+  padding-top: calc(var(--base-padding) / 5);
+}
+.project__name {
+  text-align: center;
+}
+.project__description {
+  text-align: center;
+}
+.project__preview {
+  width: 683px;
+}
+
 .favourites {
   padding: calc(var(--base-padding) / 2) var(--base-padding);
   background: var(--background-primary);
   border-radius: var(--base-border-radius);
   margin-bottom: var(--base-margin);
 }
-.favourites__list {
-  padding-left: unset;
-}
-.favourites__item {
-  background: -webkit-gradient(linear, left top, right top, from(#a764ed), to(#e292aa));
-  background: linear-gradient(to right, #a764ed, #e292aa);
-  color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
-}
 .favourites__most-favourite {
-  margin: unset;
   margin-bottom: var(--base-margin);
   color: var(--text-small);
+}
+
+.socials {
+  padding: var(--base-padding);
+  background: var(--background-primary);
+  border-radius: var(--base-border-radius);
+  margin-bottom: var(--base-margin);
+}
+.socials__list {
+  list-style: none;
+  padding-left: unset;
+  margin: unset;
+  text-align: center;
 }
 
 .social {
@@ -62,18 +103,6 @@
   text-decoration: none;
   padding: 5px 12px;
   margin: calc(var(--base-margin) / 3.25);
-}
-.socials {
-  padding: var(--base-padding);
-  background: var(--background-primary);
-  border-radius: var(--base-border-radius);
-  margin-bottom: var(--base-margin);
-}
-.socials__list {
-  list-style: none;
-  padding-left: unset;
-  margin: unset;
-  text-align: center;
 }
 .social__link {
   text-decoration: none;
