@@ -1,38 +1,44 @@
-<!DOCTYPE html>
 <html>
-  <body class="app">
+  <head>
+    <title>The Website of Alex</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/282/smiling-face-with-sunglasses_1f60e.png">
+    <meta name="description" content="The official website of Alex"> <!-- Look I'm bored to death okay -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- https://www.w3schools.com/tags/tag_meta.asp lol -->
+  </head>
+  <body class="app">
     <div class="main">
       <div class="intro">
         <h1 class="intro-header">Hey there, I'm Alex!</h1>
         <div class="socials">
-            <a class="socials-item socials-item-github" href="https://github.com/spinfish"></a>
-            <a class="socials-item socials-item-spotify" href="https://open.spotify.com/user/f46m7qgn6noj0lm4wonp2z95l?si=0jLS8C1SRWO0i1htqyapew"></a>
-            <a class="socials-item socials-item-discord" href="https://invite.gg/people"></a>
-            <a class="socials-item socials-item-pronouns" href="https://en.pronouns.page/@legume"></a>
+          <a class="socials-item socials-item-github" href="https://github.com/spinfish"></a>
+          <a class="socials-item socials-item-spotify" href="https://open.spotify.com/user/f46m7qgn6noj0lm4wonp2z95l?si=0jLS8C1SRWO0i1htqyapew"></a>
+          <a class="socials-item socials-item-discord" href="https://invite.gg/people"></a>
+          <a class="socials-item socials-item-twitter" href="https://twitter.com/the_epic_legume"></a>
+          <a class="socials-item socials-item-pronouns" href="https://en.pronouns.page/@legume"></a>
         </div>
-        <p class="intro-paragraph">
+        <p>
           I dabble with programming sometimes, and I spend most of my free time on Discord.<br>
           Below are some themes that I'm working on, and above are my socials if you ever wanna talk!
         </p>
         <h5 class="intro-direct-contact">You can also contact me directly on Discord at <span onclick="window.location.href=[ 'https://youtu.be/dQw4w9WgXcQ', 'https://youtu.be/nFstpT_YTro' ][Math.floor(Math.random() * 2)]">legume#0173</span></h5> <!-- :keuch: -->
       </div>
       <div class="projects">
-        <details class="projects-item">
-          <summary> <!-- class="projects-item-header" -->
-            <h2 class="projects-item-name"><a class="link" href="https://github.com/spinfish/amethyst">Amethyst</a></h2>
+        <details class="projects-details">
+          <summary> <!-- class="projects-details-header" -->
+            <h2 class="projects-details-name"><a class="link" href="https://github.com/spinfish/amethyst">Amethyst</a></h2>
           </summary>
-          <p>A calm, deep purple theme for those seeking serenity.</p> <!-- class="projects-item-description" -->
-          <img class="projects-item-preview" src="https://raw.githubusercontent.com/spinfish/images/master/amethyst/preview_1.png">
+          <p>A calm, deep purple theme for those seeking serenity.</p> <!-- class="projects-details-description" -->
+          <img class="projects-details-preview" src="https://raw.githubusercontent.com/spinfish/images/master/amethyst/preview_1.png">
         </details>
-        <details class="projects-item">
-          <summary> <!-- class="projects-item-header" -->
-            <h2 class="projects-item-name"><a class="link" href="https://github.com/spinfish/kaleidoscope">Kaleidoscope</a></h2>
+        <details class="projects-details">
+          <summary> <!-- class="projects-details-header" -->
+            <h2 class="projects-details-name"><a class="link" href="https://github.com/spinfish/kaleidoscope">Kaleidoscope</a></h2>
           </summary>
-          <p> <!-- class="projects-item-description" -->
+          <p> <!-- class="projects-details-description" -->
             A vibrant, colourful dark theme for Discord inspired by <a class="link" href="https://marketplace.visualstudio.com/items?itemName=Endormi.2077-theme">the 2077 theme for VSCode.</a>
           </p>
-          <img class="projects-item-preview" src="https://raw.githubusercontent.com/spinfish/images/master/kaleidoscope/preview_1.png">
+          <img class="projects-details-preview" src="https://raw.githubusercontent.com/spinfish/images/master/kaleidoscope/preview_1.png">
         </details>
       </div>
       <div class="favourites">
@@ -43,6 +49,12 @@
         </ul>
         <h6 class="favourites-most-favourite">Also my favourite food is bread.</h6> <!-- :keuch: -->
       </div>
+      <details class="lastfm">
+        <summary>
+          <h3 class="lastfm-header">Songs I've been listening to recently</h3>
+        </summary>
+        <img class="lastfm-card" src="https://lastfm-recently-played.vercel.app/api?user=mackenzie_0173&amp;count=10&amp;width=670">
+      </details>
       <h5 class="footer">Copyright (C) 2021 spinfish</h5>
     </div>
   </body>
