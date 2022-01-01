@@ -1,21 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 .app {
   --background-primary: rgb(35, 4, 49);
-  --background-secondary: rgb(28, 0, 40);
-  --background-tertiary: rgb(13, 0, 23);
   --background-socials: rgb(45, 15, 61);
   --base-border-radius: 10px;
   --base-padding: 20px;
   --base-margin: 10px;
-  --base-amethyst-background: url("https://cdn.sivanaspirit.com/wp-content/uploads/2017/12/03215120/un-90.jpg");
+  --base-app-background: url("https://cdn.sivanaspirit.com/wp-content/uploads/2017/12/03215120/un-90.jpg");
   --text-normal: rgb(220, 221, 222);
   --text-small: rgb(114, 118, 125);
   --text-link: rgb(58, 195, 184);
   --text-link-active: rgb(5, 207, 255);
+  --scrollbar-width: 16px;
+  --scrollbar-background: rgb(28, 0, 40);
+  --scrollbar-thumb: rgb(53, 22, 65);
+  --scrollbar-thumb-hover: rgb(69, 29, 85);
+  --max-main-size: 624.47px;
   color: var(--text-normal);
   font-family: "Inter", sans-serif;
   text-align: center;
-  background: var(--base-amethyst-background) center/cover no-repeat fixed;
+  background: var(--base-app-background) center/cover no-repeat fixed;
+  -webkit-transition: background 750ms linear;
+  transition: background 750ms linear;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,12 +32,15 @@
           align-items: center;
 }
 
-.link {
-  color: var(--text-link);
-  text-decoration: none;
-}
-.link:active {
-  color: var(--text-link-active);
+.kaleidoscope-enabled {
+  --background-primary: rgb(3, 13, 34);
+  --background-socials: rgb(0, 19, 45);
+  --base-app-background: url("https://motionarray.imgix.net/preview-165773-AkKvLY3HHL-high_0004.jpg");
+  --text-normal: rgb(214, 46, 151);
+  --text-small: rgb(0, 118, 187);
+  --scrollbar-background: rgb(3, 13, 34);
+  --scrollbar-thumb: rgb(5, 207, 255);
+  --scrollbar-thumb-hover: rgb(1, 206, 206);
 }
 
 .main {
@@ -44,9 +52,26 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: var(--base-margin);
-  background: var(--background-secondary);
-  padding: var(--base-padding);
+  padding-right: calc(var(--base-padding) * 0.8);
   border-radius: calc(var(--base-border-radius) * 2);
+  max-height: var(--max-main-size);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: auto;
+}
+.main::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  background: var(--scrollbar-background);
+  border-radius: var(--base-border-radius);
+}
+.main::-webkit-scrollbar-thumb {
+  border: calc(var(--scrollbar-width) * 0.25) solid transparent;
+  background: var(--scrollbar-thumb);
+  background-clip: padding-box;
+  border-radius: inherit;
+}
+.main::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
 }
 
 .intro {
@@ -118,6 +143,19 @@
   width: 683px;
 }
 
+.change-theme-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.change-theme-button-contents {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgb(220, 221, 222)' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Crect x='0' y='0' width='24' height='24' style='fill:none;'/%3E%3Cg%3E%3Cg%3E%3Cpath d='M12,2c-5.51,0 -10,4.49 -10,10c0,5.51 4.49,10 10,10c1.38,0 2.5,-1.12 2.5,-2.5c0,-0.61 -0.23,-1.2 -0.64,-1.67c-0.08,-0.1 -0.13,-0.21 -0.13,-0.33c0,-0.28 0.22,-0.5 0.5,-0.5l1.77,0c3.31,0 6,-2.69 6,-6c0,-4.96 -4.49,-9 -10,-9Zm5.5,11c-0.83,0 -1.5,-0.67 -1.5,-1.5c0,-0.83 0.67,-1.5 1.5,-1.5c0.83,0 1.5,0.67 1.5,1.5c0,0.83 -0.67,1.5 -1.5,1.5Zm-3,-4c-0.83,0 -1.5,-0.67 -1.5,-1.5c0,-0.83 0.67,-1.5 1.5,-1.5c0.83,0 1.5,0.67 1.5,1.5c0,0.83 -0.67,1.5 -1.5,1.5Zm-9.5,2.5c0,-0.83 0.67,-1.5 1.5,-1.5c0.83,0 1.5,0.67 1.5,1.5c0,0.83 -0.67,1.5 -1.5,1.5c-0.83,0 -1.5,-0.67 -1.5,-1.5Zm6,-4c0,0.83 -0.67,1.5 -1.5,1.5c-0.83,0 -1.5,-0.67 -1.5,-1.5c0,-0.83 0.67,-1.5 1.5,-1.5c0.83,0 1.5,0.67 1.5,1.5Z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  width: 20px;
+  height: 20px;
+  background: var(--icon) center/cover no-repeat;
+}
+
 .favourites {
   padding: calc(var(--base-padding) / 2) var(--base-padding);
   background: var(--background-primary);
@@ -150,5 +188,13 @@
   border-radius: var(--base-border-radius);
   margin: unset;
   color: var(--text-small);
+}
+
+.link {
+  color: var(--text-link);
+  text-decoration: none;
+}
+.link:active {
+  color: var(--text-link-active);
 }
 /*# sourceMappingURL=main.css.map */
