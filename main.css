@@ -52,7 +52,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: var(--base-margin);
-  padding-right: calc(var(--base-padding) * 0.8);
+  padding-right: calc(var(--base-padding) * 0.7);
   border-radius: calc(var(--base-border-radius) * 2);
   max-height: var(--max-main-size);
   -webkit-box-sizing: border-box;
@@ -197,4 +197,3 @@
 .link:active {
   color: var(--text-link-active);
 }
-/*# sourceMappingURL=main.css.map */
